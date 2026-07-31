@@ -7,14 +7,14 @@
 class Solution(object):
     def hasCycle(self, head):
         self.head=head
-        l=[]
+        l=set()
         if self.head==None:
             return False
         else:
             curr=head
             while curr.next!=None:
                 if curr not in l:
-                    l.append(curr)
+                    l.add(curr)
                     curr=curr.next
                 else:
                     return True
