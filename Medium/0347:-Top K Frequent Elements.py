@@ -1,16 +1,12 @@
 class Solution(object):
     def topKFrequent(self, nums, k):
-        l=list(set(nums)) 
-        d=[] 
-        for i in l:
-            b=nums.count(i) 
-            d.append(b)
-        s=[] 
-        for i in range(k):
-            f=max(d) 
-            g=d.index(f) 
-            s.append(l[g]) 
-            d.remove(f) 
-            l.remove(l[g])
-
-        return s
+        l=[]
+        ans=[]
+        s=list(set(nums))
+        for i in range(len(s)): 
+            l.append(nums.count(s[i])) 
+        for j in range(k):
+            a=l.index(max(l))
+            ans.append(s[a])
+            l[a]=-1
+        return ans
