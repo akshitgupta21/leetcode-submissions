@@ -11,5 +11,4 @@ class Solution(object):
         for j in range(len(nums)/2):
             l.append(p[j])
             l.append(n[j])
-        nums=l
-        return nums
+        return l
