@@ -8,13 +8,15 @@ class Solution(object):
     def hasCycle(self, head):
         self.head=head
         l=set()
-        if self.head==None:
+        if head==None:
             return False
-        else:
-            curr=head
-            while curr.next!=None:
-                if curr not in l:
-                    l.add(curr)
-                    curr=curr.next
-                else:
-                    return True
+        curr=self.head
+        a=0
+        while a==0:
+            if curr in l:
+                return True
+            if curr.next==None:
+                return False
+            else:
+                l.add(curr)
+                curr=curr.next
